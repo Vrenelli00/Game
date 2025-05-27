@@ -1,0 +1,80 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Hide scrollbars */
+  height: 100%;
+  width: 100%;
+}
+
+#gameLogo {
+  width: 300px;          /* Bigger size */
+  filter: drop-shadow(0 0 10px #00ffee);
+  animation: pulseAndFlip 2s infinite ease-in-out;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+@keyframes pulseAndFlip {
+  0% {
+    filter: drop-shadow(0 0 10px #00ffee);
+    transform: scaleX(1) scale(1);
+  }
+  25% {
+    filter: drop-shadow(0 0 30px #00ffee);
+    transform: scaleX(1) scale(1.05);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #00ffee);
+    transform: scaleX(-1) scale(1);
+  }
+  75% {
+    filter: drop-shadow(0 0 30px #00ffee);
+    transform: scaleX(-1) scale(1.05);
+  }
+  100% {
+    filter: drop-shadow(0 0 10px #00ffee);
+    transform: scaleX(1) scale(1);
+  }
+}
+
+#game {
+  position: relative;
+  margin: 0 auto;  /* no top margin */
+  top: 0;          /* if needed */
+}
+
+#restartBtn {
+  position: fixed;
+  left: 50%;
+  bottom: 30%;
+  transform: translateX(-50%);
+  display: block;
+  z-index: 9999;
+
+  /* SIZE CONTROL */
+  padding: 14px 28px;     /* Bigger padding = bigger button */
+  font-size: 20px;        /* Bigger text */
+  border-radius: 8px;     /* Optional: rounded corners */
+}
+
+.cnv {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-style: solid;
+}
+
+#canvasFood {
+  background-color: transparent;
+  z-index: 2;
+}
+
+#canvasHex {
+  background-color: black;
+  z-index: 1;
+}
+
+#canvasSnake {
+  background-color: transparent;
+  z-index: 3;
+}
